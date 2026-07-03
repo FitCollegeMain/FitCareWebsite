@@ -20,7 +20,15 @@ LEAF, PHONE, STARS5 = bp.LEAF, bp.PHONE, bp.STARS5
 # reusable body builders
 # --------------------------------------------------------------------------
 
-def hero_page(eyebrow, h1, sub, media_label, aside=""):
+def hero_page(eyebrow, h1, sub, media_label, aside="", img=None, img_alt=""):
+    if img:
+        media = ('<div class="media media--hero"><img class="media-img" src="%s" alt="%s"></div>'
+                 % (img, img_alt))
+    else:
+        media = ("""<div class="media media--hero" role="img" aria-label="Placeholder photo">
+      <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
+      <div class="media-label"><strong>Placeholder</strong>%s</div>
+    </div>""" % media_label)
     return """
 <section class="hero hero--page">
   <div class="wrap">
@@ -34,12 +42,9 @@ def hero_page(eyebrow, h1, sub, media_label, aside=""):
       </div>
       %s
     </div>
-    <div class="media media--hero" role="img" aria-label="Placeholder photo">
-      <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-      <div class="media-label"><strong>Placeholder</strong>%s</div>
-    </div>
+    %s
   </div>
-</section>""" % (eyebrow, h1, sub, aside, media_label)
+</section>""" % (eyebrow, h1, sub, aside, media)
 
 def what_we_help(title, sub, cards):
     c = "".join("<div class=\"svc\"><h3>%s</h3><p>%s</p></div>" % (t, d) for t, d in cards)
@@ -114,8 +119,8 @@ def team_section(sub):
   </div>
 </section>""" % sub
 
-def service_body(eyebrow, h1, sub, media_label, ww_title, ww_sub, cards, note, faq_html, cta):
-    return (hero_page(eyebrow, h1, sub, media_label)
+def service_body(eyebrow, h1, sub, media_label, ww_title, ww_sub, cards, note, faq_html, cta, img=None, img_alt=""):
+    return (hero_page(eyebrow, h1, sub, media_label, img=img, img_alt=img_alt)
             + "\nTRUST_BAR\n"
             + what_we_help(ww_title, ww_sub, cards)
             + how_it_works(note)
@@ -179,7 +184,9 @@ SOCIAL_COMMUNITY = service_body(
          "Call 1300 348 227 or use the Get Started form. We'll set up a relaxed meet &amp; greet with a Service Coordinator."),
     ]),
     bp.cta_final("Your community's waiting",
-                 "Tell us what a good week looks like — or call and chat it through. We'll reply within one business day."))
+                 "Tell us what a good week looks like — or call and chat it through. We'll reply within one business day."),
+    img="@/assets/img/story-boat-outing.jpg",
+    img_alt="A FITCare support worker and participant sit arm in arm, smiling, on a boat cruising calm coastal waters with waterfront homes behind them")
 
 TRANSPORT = service_body(
     "Services · Transport &amp; travel",
@@ -364,13 +371,18 @@ LOCATIONS_CTA
 # team directory + profile template
 # --------------------------------------------------------------------------
 
-def dir_card(name, tags, tagslug):
+def dir_card(name, tags, tagslug, img=None):
     chips = "".join('<span class="chip">%s</span>' % t for t in tags)
-    return ('<div class="tw" data-tags="%s"><div class="media media--square" role="img" aria-label="Placeholder for %s\'s photo">'
-            '<div class="media-label"><strong>Placeholder</strong>Photo</div></div>'
+    if img:
+        media = ('<div class="media media--square"><img class="media-img" src="%s" '
+                 'alt="Portrait of %s, FITCare support worker, in the black FITCare polo"></div>' % (img, name))
+    else:
+        media = ('<div class="media media--square" role="img" aria-label="Placeholder for %s\'s photo">'
+                 '<div class="media-label"><strong>Placeholder</strong>Photo</div></div>' % name)
+    return ('<div class="tw" data-tags="%s">%s'
             '<div class="tw-body"><h3>%s</h3><div class="tw-tags">%s</div>'
             '<a class="tw-link" href="@/team/profile-template.html">View profile →</a></div></div>'
-            % (tagslug, name, name, chips))
+            % (tagslug, media, name, chips))
 
 TEAM_PAGE = """
 <section class="section" style="padding-bottom:clamp(32px,5vw,56px)">
@@ -418,7 +430,7 @@ TEAM_CTA
     dir_card("Anna", ["Yoga", "Daily living"], "yoga"),
     dir_card("Ashli", ["Fitness", "Creative"], "fitness creative"),
     dir_card("Brigitte", ["Community", "Outings"], "community"),
-    dir_card("Brooke", ["Swimming", "Fitness"], "swimming fitness"),
+    dir_card("Brooke", ["Swimming", "Fitness"], "swimming fitness", img="@/assets/img/team/brooke.jpg"),
     dir_card("Bruce", ["Strength training", "Lawn bowls"], "fitness community"),
     dir_card("Carissa", ["Yoga", "Daily living"], "yoga"),
     dir_card("Dan", ["Running", "Footy"], "fitness"),
@@ -429,17 +441,17 @@ TEAM_CTA
 PROFILE_TEMPLATE = """
 <section class="section">
   <div class="wrap">
-    <p style="margin-bottom:18px"><span class="chip chip--sample">Template page — in production, every support worker gets one of these with a real photo and their own words</span></p>
+    <p style="margin-bottom:18px"><span class="chip chip--sample">Profile template shown with Brooke's real portrait — bio, tags and availability are placeholders pending her own words</span></p>
     <div class="profile">
-      <div class="media" role="img" aria-label="Photo slot: portrait of a smiling FITCare support worker in the black FITCare polo against a plain light background"><div class="media-label"><strong>Portrait selected ✔ — awaiting file</strong>Headshot in FITCare polo, plain background — the standard for all 40+ profile portraits. Save as assets/img/team/&lt;worker-name&gt;.jpg and match to the correct profile.</div></div>
+      <div class="media"><img class="media-img" src="@/assets/img/team/brooke.jpg" alt="Portrait of Brooke, FITCare support worker, smiling in the black FITCare polo against a plain light background"></div>
       <div class="profile-body">
         <span class="chip chip--ok">Taking new participants</span>
-        <h3>Allison</h3>
-        <div class="profile-meta"><span class="chip">Swimming</span><span class="chip">Community outings</span><span class="chip">Sunshine Coast</span></div>
-        <p>[PLACEHOLDER bio — 60–90 words in Allison's own voice: background, what a great day of support looks like, one personal detail participants can connect over.]</p>
+        <h3>Brooke</h3>
+        <div class="profile-meta"><span class="chip">Swimming</span><span class="chip">Fitness</span><span class="chip">Sunshine Coast</span></div>
+        <p>[PLACEHOLDER bio — 60–90 words in Brooke's own voice: background, what a great day of support looks like, one personal detail participants can connect over.]</p>
         <blockquote style="margin:0;padding:8px 0 8px 22px;border-left:4px solid var(--sun-400);font-family:'Bricolage Grotesque',sans-serif;font-weight:600;color:var(--ink)">"[Sample pull-quote from a participant or family member — pending consent program]"</blockquote>
         <div class="profile-ctas">
-          <a class="btn btn--primary" href="@/get-started.html?worker=allison">Request Allison</a>
+          <a class="btn btn--primary" href="@/get-started.html?worker=brooke">Request Brooke</a>
           <a class="btn btn--ghost" href="@/team/index.html">Back to the team</a>
         </div>
       </div>
@@ -452,12 +464,16 @@ PROFILE_TEMPLATE = """
 # activities
 # --------------------------------------------------------------------------
 
-def act_card(cat, title, desc):
-    return ('<div class="act" data-tags="%s"><div class="media media--wide" role="img" aria-label="Placeholder photo: %s">'
-            '<div class="media-label"><strong>Placeholder</strong>Photo</div></div>'
+def act_card(cat, title, desc, img=None, img_alt=""):
+    if img:
+        media = ('<div class="media media--wide"><img class="media-img" src="%s" alt="%s"></div>' % (img, img_alt))
+    else:
+        media = ('<div class="media media--wide" role="img" aria-label="Placeholder photo: %s">'
+                 '<div class="media-label"><strong>Placeholder</strong>Photo</div></div>' % title)
+    return ('<div class="act" data-tags="%s">%s'
             '<div class="act-body"><span class="chip">%s</span><h3>%s</h3>'
             '<div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>%s</p></div></div>'
-            % (cat.lower(), title, cat, title, desc))
+            % (cat.lower(), media, cat, title, desc))
 
 ACTIVITIES_PAGE = """
 <section class="section" style="padding-bottom:clamp(32px,5vw,56px)">
@@ -506,7 +522,9 @@ ACT_CTA
 ])).replace("WK2", "\n".join([
     act_card("Outings", "Local markets trip", "Wander the stalls, grab a coffee, take home something good."),
     act_card("Fitness", "Aqua fitness", "Low-impact, high-fun water workout with the swim crew."),
-    act_card("Social", "Games afternoon", "Board games, card games and a fair bit of friendly rivalry."),
+    act_card("Outings", "Beach walk &amp; smoothies", "Sea air, soft sand and a smoothie at the end. All paces welcome.",
+             img="@/assets/img/activities-beach-selfie.jpg",
+             img_alt="Two smiling FITCare community members take a selfie on the beach on an overcast day"),
     act_card("Creative", "Art &amp; craft", "Paint, paper, glue and good company — beginners very welcome."),
 ])).replace("ACT_CTA", bp.cta_final("See something you like?",
     "Tell us which activity caught your eye and we'll sort the rest — including getting there."))

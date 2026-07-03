@@ -39,11 +39,9 @@ HEAD = """<!doctype html>
 
 HEADER = """<header class="site-head">
   <div class="wrap">
-    <a class="logo" href="@/index.html" aria-label="FITCare Support Services — home">
-      <span class="logo-line">
-        <span class="logo-fit">F<span class="logo-i">I<svg class="logo-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg></span>T</span><span class="logo-care">Care</span>
-      </span>
-      <span class="logo-sub">Support Services</span>
+    <a class="logo" href="@/index.html">
+      <img class="logo-img logo-img--light" src="@/assets/img/logo.png" alt="FITCare Support Services — home" width="900" height="340">
+      <img class="logo-img logo-img--dark" src="@/assets/img/logo-white.png" alt="FITCare Support Services — home" width="900" height="340">
     </a>
     <nav class="nav" aria-label="Main">
       <a href="@/services/index.html"{cur_services}>Services</a>
@@ -66,10 +64,7 @@ FOOTER = """</main>
   <div class="wrap">
     <div class="foot-main">
       <div class="foot-brand">
-        <span class="logo" aria-hidden="true">
-          <span class="logo-line"><span class="logo-fit">FIT</span><span class="logo-care">Care</span></span>
-          <span class="logo-sub">Support Services</span>
-        </span>
+        <img class="logo-img" src="@/assets/img/logo-white.png" alt="" width="900" height="340">
         <p>Healthy support workers delivering healthy support work across the Sunshine Coast and South East Queensland.</p>
         <p>Suite 10, 102 Wises Road<br>Maroochydore QLD 4558</p>
       </div>
@@ -146,13 +141,19 @@ STEPS = """<div class="steps">
   <div class="step"><span class="step-n" aria-hidden="true">3</span><h3>Get matched</h3><p>We match you with support workers who fit your interests, goals and personality. Not the right fit? We'll rematch, no fuss.</p></div>
 </div>"""
 
-def team_card(name, tags, media_label="Photo"):
+def team_card(name, tags, media_label="Photo", img=None):
     chips = "".join('<span class="chip">%s</span>' % t for t in tags)
-    return ('<div class="tw"><div class="media media--square" role="img" aria-label="Placeholder for %s\'s photo">'
-            '<div class="media-label"><strong>Placeholder</strong>%s</div></div>'
+    if img:
+        media = ('<div class="media media--square">'
+                 '<img class="media-img" src="%s" alt="Portrait of %s, FITCare support worker, in the black FITCare polo"></div>'
+                 % (img, name))
+    else:
+        media = ('<div class="media media--square" role="img" aria-label="Placeholder for %s\'s photo">'
+                 '<div class="media-label"><strong>Placeholder</strong>%s</div></div>' % (name, media_label))
+    return ('<div class="tw">%s'
             '<div class="tw-body"><h3>%s</h3><div class="tw-tags">%s</div>'
             '<a class="tw-link" href="@/team/index.html">View profile →</a></div></div>'
-            % (name, media_label, name, chips))
+            % (media, name, chips))
 
 def faq(items):
     out = ['<div class="faq">']
@@ -305,9 +306,8 @@ HOME_BODY = """
       </div>
       <a class="hero-aside-link" href="@/team/index.html">Meet our support workers →</a>
     </div>
-    <div class="media media--hero" role="img" aria-label="Photo slot: a FITCare support worker and participant take a smiling selfie at a coastal lookout over bright blue Sunshine Coast water; the participant, in a Hawaiian shirt, gives a peace sign">
-      <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-      <div class="media-label"><strong>Photo selected ✔ — awaiting file</strong>Support worker &amp; participant selfie at a coastal lookout (Hawaiian shirt, peace sign). Save as assets/img/hero-lookout-selfie.jpg — alt text is written and ready in this slot.</div>
+    <div class="media media--hero">
+      <img class="media-img" src="@/assets/img/hero-lookout-selfie.jpg" alt="A FITCare support worker and participant take a smiling selfie at a coastal lookout over bright blue Sunshine Coast water; the participant, in a Hawaiian shirt, gives a peace sign" width="1440" height="1080">
     </div>
   </div>
 </section>
@@ -791,7 +791,7 @@ LOCATION_CTA = cta_final("Ready when you are, Sunshine Coast",
     "Tell us a little about you — or call the Maroochydore office and chat it through. We'll reply within one business day.")
 
 TEAM_CARDS = "\n".join([
-    team_card("Allison", ["Swimming", "Community outings"]),
+    team_card("Brooke", ["Swimming", "Fitness"], img="@/assets/img/team/brooke.jpg"),
     team_card("Bruce", ["Strength training", "Lawn bowls"]),
     team_card("Carissa", ["Yoga", "Daily living"]),
     team_card("Dan", ["Running", "Footy"]),

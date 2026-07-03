@@ -9,17 +9,18 @@ as real. Owner column: **C** = client, **D** = developer, **C+D** = both.
 
 | Item | Where it's used | Owner |
 |---|---|---|
-| Logo as SVG (primary + secondary per brand guide, incl. white-on-blue variant) | header + footer on every page (currently a live-text recreation) | C |
+| ~~Logo~~ **DELIVERED 3 Jul 2026** — transparent PNG (4344px original in `assets/img/originals/`, web versions `logo.png` + all-white `logo-white.png` live in header/footer). Vector SVG still preferred for print/production if available. | header + footer on every page | ✔ |
 | Favicon set generated from the leaf mark | site-wide | D |
 
 ## 2. Photography & video
 
 | Item | Where | Owner |
 |---|---|---|
-| Home hero photo — **SELECTED 3 Jul 2026** (support worker + participant selfie at coastal lookout, Hawaiian shirt/peace sign) — awaiting file transfer as `assets/img/hero-lookout-selfie.jpg`; alt text already written into the slot. Confirm participant consent is on file. | home | C |
-| Service page heroes: training session, daily-living, community outing, transport, aged-care class. Candidates already sighted: boat-outing shot (worker + participant on the water) suits Social &amp; Community or the story card; beach selfie suits Activities. | 5 service pages | C |
+| ~~Home hero photo~~ **DELIVERED & LIVE 3 Jul 2026** — coastal-lookout selfie embedded at `assets/img/hero-lookout-selfie.jpg`. **Confirm participant consent is on file** for this and every participant photo. | home | ✔ / consent: C |
+| Service page heroes — **Social &amp; Community DELIVERED** (boat-outing photo, live). Still needed: training session, daily-living, transport, aged-care class. | 4 remaining service pages | C |
 | Location heroes: one genuine local shot per region (×4) | location pages | C |
-| Support worker portraits (40+, consistent style) — **standard set 3 Jul 2026**: headshot in black FITCare polo on plain light background (first portrait sighted, awaiting file as `assets/img/team/<name>.jpg`) | team directory + profiles + team sections | C |
+| Support worker portraits — **standard set &amp; first portrait LIVE 3 Jul 2026** (Brooke, black FITCare polo on plain background, `assets/img/team/brooke.jpg`). Remaining 39+ portraits to the same standard. | team directory + profiles + team sections | C |
+| Activities photo **DELIVERED** (beach selfie, live on Activities) — source is 206px; supply a higher-resolution original if one exists. | activities | C |
 | Activity photos (one per recurring activity) | activities + home + location highlights | C |
 | Team/group shot | careers | C |
 | Every image needs descriptive alt text at upload — no filename junk | site-wide | C+D |

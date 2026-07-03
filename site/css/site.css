@@ -391,3 +391,21 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
 /* ---------- news cards ---------- */
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media (max-width:860px){.news-grid{grid-template-columns:1fr}}
+
+/* ---------- real imagery ---------- */
+.media-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media:has(.media-img) .leaf-bg,.media:has(.media-img) .media-label{display:none}
+
+/* logo image: light/dark variant swap (data-theme beats the media query) */
+.logo{padding-block:6px}
+.logo-img{height:44px;width:auto;display:block}
+.logo-img--dark{display:none}
+@media (prefers-color-scheme:dark){
+  .logo-img--light{display:none}
+  .logo-img--dark{display:block}
+}
+:root[data-theme="light"] .logo-img--light{display:block}
+:root[data-theme="light"] .logo-img--dark{display:none}
+:root[data-theme="dark"] .logo-img--light{display:none}
+:root[data-theme="dark"] .logo-img--dark{display:block}
+.foot .logo-img{height:56px}

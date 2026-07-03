@@ -35,7 +35,7 @@ is chip-flagged in the prototype and listed there with an owner.
 2. **Type** — free stand-ins for the licensed brand faces: Bricolage Grotesque (display, for Bilo), Figtree (body, for Bilo text), Dancing Script (script, for Gardenisa). Approved for prototype and production.
 3. **Dark mode** — ships alongside light; token-level theming.
 4. **Voice** — participant-first-person: *"With the right support, I do it my way."* Family and coordinator pages keep their own registers per the brief.
-5. **Outstanding asset** — production logo as SVG / transparent PNG (primary + secondary versions). Header wordmark is currently a live-text recreation.
+5. **Logo** — delivered 3 Jul 2026 as transparent PNG; live in header (light + white dark-mode variant) and footer. First real photography also live: home hero, Social & Community hero, Brooke's portrait, activities shot.
 
 ## Repository layout
 
