@@ -888,6 +888,8 @@ def render(path, title, desc, nav, body):
                             cur_coordinators=cur["coordinators"])
             + fill(body)
             + FOOTER)
+    # Eyebrow labels removed site-wide (client decision, 3 Jul 2026)
+    html = re.sub(r'<span class="eyebrow"[^>]*>.*?</span>\s*', "", html, flags=re.S)
     html = html.replace("@/", root)
     out = os.path.join(SITE, path)
     os.makedirs(os.path.dirname(out), exist_ok=True)
