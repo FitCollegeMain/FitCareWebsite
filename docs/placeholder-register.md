@@ -34,6 +34,14 @@ as real. Owner column: **C** = client, **D** = developer, **C+D** = both.
 | 4–6 short reviews for the carousel | service/location pages | C |
 | Google Reviews feed decision | carousel is API-shape-ready; needs Places API key + place ID if wanted | C+D |
 
+## 3b. Home social feed panel (added 3 Jul 2026)
+
+| Item | Notes | Owner |
+|---|---|---|
+| YouTube channel URL / channel ID | powers the panel's 4 latest videos (RSS, no API key); also fixes the "Watch on YouTube" button link | C |
+| Instagram Business/Creator conversion + Graph API token | powers the 4 latest posts; account must be linked to the Facebook Page; long-lived token with auto-refresh | C+D |
+| Server-side feed cache (hourly) with stale-on-error fallback | wiring spec in README-FOR-DEVELOPER §8b | D |
+
 ## 4. Content & data
 
 | Item | Where | Owner |

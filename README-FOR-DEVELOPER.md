@@ -172,6 +172,30 @@ screen reader pass), record known limitations on `/accessibility`, add captions
 to all video, and consider Easy Read versions of key pages (recommended, see
 placeholder register).
 
+## 8b. Home social feed panel (`.social`, home page)
+
+The homepage panel shows the **4 most recent YouTube videos + 4 most recent
+Instagram posts**, auto-updating. The prototype ships the component with sample
+tiles (`data-feed="youtube-latest-4 instagram-latest-4"` marks the mount point);
+production wires the data:
+
+- **YouTube (no API key needed):** fetch the channel's RSS feed
+  `https://www.youtube.com/feeds/videos.xml?channel_id=UC…` server-side on a
+  schedule (hourly is plenty), take the first 4 entries → video ID + title.
+  Thumbnail: `https://i.ytimg.com/vi/<ID>/hqdefault.jpg`. Render each tile as
+  the §5 video facade — clicking injects a `youtube-nocookie.com/embed/<ID>`
+  iframe; nothing loads before the click. Channel ID comes from the client
+  (see placeholder register).
+- **Instagram:** requires the client's Instagram account converted to a
+  Business/Creator account linked to their Facebook Page, then the Graph API:
+  `GET /<ig-user-id>/media?fields=media_url,permalink,caption,timestamp&limit=4`
+  with a long-lived token (refresh ~60 days — automate it). Cache media
+  server-side; tile links to `permalink`; build alt text from `caption`
+  (truncate ~100 chars). Do **not** fetch client-side (token exposure + CORS).
+- Cache both feeds server-side and render into the HTML (keeps the page fast,
+  crawlable, and working with JS off). If a feed fails, fall back to the last
+  cached set — never render an empty panel.
+
 ## 9. SEO & analytics notes
 
 - Every page ships unique `<title>`, `meta description` and OG tags (the old site

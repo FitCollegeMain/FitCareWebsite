@@ -510,6 +510,21 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
 :root[data-theme="dark"] .logo-img--dark{display:block}
 .foot .logo-img{height:56px}
 
+/* ---------- social feed panel (home) ---------- */
+.social{background:var(--band);color:#fff;padding-block:clamp(64px,9vw,112px);position:relative;overflow:hidden}
+.social .leaf-bg{position:absolute;width:420px;color:rgba(255,255,255,.05);top:-80px;left:-100px;transform:rotate(24deg)}
+.social .sec-head h2{color:#fff}
+.social .sec-head p{color:#C9DAF5}
+.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-m);overflow:hidden;display:grid;grid-template-rows:auto 1fr;text-decoration:none;transition:transform .18s,border-color .18s}
+.stile:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.4)}
+.stile .media{border-radius:0;box-shadow:none}
+.stile-cap{padding:12px 14px;font-size:.8125rem;font-weight:600;color:#DCE6F7;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.stile-cap svg{flex:none;margin-top:1px;color:var(--sun-3)}
+.play-badge{position:absolute;z-index:1;width:46px;height:46px;border-radius:999px;background:rgba(13,33,64,.78);color:#fff;display:grid;place-items:center;pointer-events:none}
+.social-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media (max-width:960px){.social-grid{grid-template-columns:1fr 1fr}}
+
 .route[hidden]{display:none}
 </style>
 <div class="phase-note"><strong>Wired-up demo — the whole prototype in one page.</strong> Every link, form and filter works. Sample content is watermarked; PDFs and the members portal open the live site.</div>
@@ -640,13 +655,51 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
   </div>
 </section>
 
-<section class="band" aria-label="Our promise">
+<section class="social" id="social" aria-label="Latest from our channels">
   <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-  <svg class="leaf-bg leaf-bg--2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
   <div class="wrap">
-    <span class="band-script">Healthy support workers</span>
-    <p class="band-main">delivering healthy support work.</p>
-    <p class="band-sub">It's been our promise since day one — and it's why over half our team hold fitness qualifications.</p>
+    <div class="sec-head">
+      <h2>See the energy for yourself</h2>
+      <p>The latest from our YouTube channel and Instagram — real activities, real people, this week. <span class="chip chip--sample">Sample tiles — the live feeds pull the 4 newest videos + 4 newest posts automatically in production</span></p>
+    </div>
+    <div class="social-grid" data-feed="youtube-latest-4 instagram-latest-4">
+      <a class="stile" href="#social" data-anchor>
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Latest video</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title — newest upload]</span>
+      </a>
+      <a class="stile" href="#social" data-anchor>
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the second most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 2</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+      <a class="stile" href="#social" data-anchor>
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the third most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 3</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+      <a class="stile" href="#social" data-anchor>
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the fourth most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 4</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+      <a class="stile" href="https://www.instagram.com/fitcare.supportservices/">
+        <div class="media media--square" role="img" aria-label="Placeholder for the most recent Instagram post"><div class="media-label"><strong>Instagram</strong>Newest post</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>@fitcare.supportservices</span>
+      </a>
+      <a class="stile" href="https://www.instagram.com/fitcare.supportservices/">
+        <div class="media media--square" role="img" aria-label="Placeholder for the second most recent Instagram post"><div class="media-label"><strong>Instagram</strong>Post 2</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>@fitcare.supportservices</span>
+      </a>
+      <a class="stile" href="https://www.instagram.com/fitcare.supportservices/">
+        <div class="media media--square" role="img" aria-label="Placeholder for the third most recent Instagram post"><div class="media-label"><strong>Instagram</strong>Post 3</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>@fitcare.supportservices</span>
+      </a>
+      <a class="stile" href="https://www.instagram.com/fitcare.supportservices/">
+        <div class="media media--square" role="img" aria-label="Placeholder for the fourth most recent Instagram post"><div class="media-label"><strong>Instagram</strong>Post 4</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>@fitcare.supportservices</span>
+      </a>
+    </div>
+    <div class="social-ctas">
+      <a class="btn btn--light" href="https://www.instagram.com/fitcare.supportservices/">Follow @fitcare.supportservices</a>
+      <a class="btn btn--outline-light" href="#social" data-anchor>Watch on YouTube <span class="chip chip--sample" style="margin-left:4px">channel link pending</span></a>
+    </div>
   </div>
 </section>
 
@@ -750,7 +803,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:0;max-width:760px">
       <h1 style="font-size:clamp(2.1rem,4.6vw,3.2rem);font-weight:800">Care with real energy behind it</h1>
-      <p>FITCare Support Services exists to empower people to get what they want out of life — by creating better access to all things. We're a registered NDIS provider on the Sunshine Coast, and we do it with the healthiest team in the business.</p>
+      <p>FITCare Support Services exists to empower people to get what they want out of life — by creating better access to all things. We're a registered NDIS provider on the Sunshine Coast, and we do it with the healthiest team in the business: over half our 60+ support workers hold fitness qualifications, alongside swim instructors, yoga teachers, football coaches and distance runners.</p>
     </div>
   </div>
 </section>
@@ -770,16 +823,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
   </div>
 </section>
 
-<section class="band band--slim" aria-label="Our promise">
-  <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-  <div class="wrap">
-    <span class="band-script">Healthy support workers</span>
-    <p class="band-main">delivering healthy support work.</p>
-    <p class="band-sub">Over half our 60+ team hold fitness qualifications — plus swim instructors, yoga teachers, football coaches and distance runners.</p>
-  </div>
-</section>
-
-<section class="section">
+<section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
       <h2>A registered NDIS provider — in writing</h2>
@@ -2361,14 +2405,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
     </div>
   </div>
 </section>
-<section class="band band--slim" aria-label="Our promise">
-  <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-  <div class="wrap">
-    <span class="band-script">Healthy support workers</span>
-    <p class="band-main">delivering healthy support work.</p>
-  </div>
-</section>
-<section class="section">
+<section class="section" style="padding-top:0">
   <div class="wrap" style="display:grid;gap:28px">
     <div class="trust-strip">
       <span><b>Registered NDIS provider</b></span><span class="dot">•</span>
@@ -2636,13 +2673,6 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="band band--slim" aria-label="Our promise">
-  <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-  <div class="wrap">
-    <span class="band-script">Healthy support workers</span>
-    <p class="band-main">delivering healthy support work.</p>
   </div>
 </section>
 <section class="section">

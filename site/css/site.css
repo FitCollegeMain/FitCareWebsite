@@ -409,3 +409,18 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
 :root[data-theme="dark"] .logo-img--light{display:none}
 :root[data-theme="dark"] .logo-img--dark{display:block}
 .foot .logo-img{height:56px}
+
+/* ---------- social feed panel (home) ---------- */
+.social{background:var(--band);color:#fff;padding-block:clamp(64px,9vw,112px);position:relative;overflow:hidden}
+.social .leaf-bg{position:absolute;width:420px;color:rgba(255,255,255,.05);top:-80px;left:-100px;transform:rotate(24deg)}
+.social .sec-head h2{color:#fff}
+.social .sec-head p{color:#C9DAF5}
+.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-m);overflow:hidden;display:grid;grid-template-rows:auto 1fr;text-decoration:none;transition:transform .18s,border-color .18s}
+.stile:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.4)}
+.stile .media{border-radius:0;box-shadow:none}
+.stile-cap{padding:12px 14px;font-size:.8125rem;font-weight:600;color:#DCE6F7;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.stile-cap svg{flex:none;margin-top:1px;color:var(--sun-3)}
+.play-badge{position:absolute;z-index:1;width:46px;height:46px;border-radius:999px;background:rgba(13,33,64,.78);color:#fff;display:grid;place-items:center;pointer-events:none}
+.social-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media (max-width:960px){.social-grid{grid-template-columns:1fr 1fr}}
