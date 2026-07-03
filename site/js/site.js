@@ -222,3 +222,78 @@
     });
   });
 })();
+
+/* ---- motion system (Tiers 1–3): reveals, hero entrance, ambience ----
+   Engages only when the user has NOT asked for reduced motion. Without
+   this running (old browser, JS off), no content is ever hidden. */
+(function () {
+  "use strict";
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("has-motion");
+
+  /* Tier 1 — tag reveal units, stagger siblings within the same container */
+  var units = document.querySelectorAll(
+    ".sec-head,.svc,.path,.step,.tw,.act,.stile,.info-card,.quote-card," +
+    ".story-card,.profile,.coord,.cta-final,.trust-strip,.pull-band," +
+    ".map-ph,.gs,.sform,.faq details,.tbl-wrap,.video-block"
+  );
+  var perParent = new Map();
+  units.forEach(function (el) {
+    if (el.closest(".hero")) return; /* hero has its own entrance */
+    var p = el.parentElement;
+    var n = perParent.get(p) || 0;
+    perParent.set(p, n + 1);
+    el.classList.add("rv");
+    el.style.transitionDelay = Math.min(n, 7) * 70 + "ms";
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+
+  /* Tier 3 — count-up on trust-bar figures (two digits or more, e.g. 60+) */
+  document.querySelectorAll(".trust-item strong").forEach(function (strong) {
+    var m = /^(\d{2,})\+/.exec(strong.textContent);
+    if (!m) return;
+    var target = parseInt(m[1], 10);
+    var rest = strong.textContent.slice(m[1].length);
+    var span = document.createElement("span");
+    span.textContent = "0";
+    strong.textContent = "";
+    strong.appendChild(span);
+    strong.appendChild(document.createTextNode(rest));
+    var counted = false;
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting || counted) return;
+        counted = true;
+        cio.unobserve(strong);
+        var t0 = null;
+        function tick(t) {
+          if (!t0) t0 = t;
+          var k = Math.min((t - t0) / 900, 1);
+          span.textContent = String(Math.round(target * (1 - Math.pow(1 - k, 3))));
+          if (k < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    cio.observe(strong);
+  });
+
+  /* Tier 3 — header shadow once the page scrolls */
+  var head = document.querySelector(".site-head");
+  if (head) {
+    var onScroll = function () {
+      head.classList.toggle("scrolled", window.scrollY > 8);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+})();

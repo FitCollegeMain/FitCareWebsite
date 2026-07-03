@@ -427,3 +427,40 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
 
 /* ---------- YouTube Shorts tiles (social panel) ---------- */
 .media--short{aspect-ratio:9/16}
+
+/* ==========================================================================
+   Motion system (Tiers 1–3) — added 3 Jul 2026
+   Everything is gated on html.has-motion, which js adds ONLY when
+   prefers-reduced-motion is not set. Without JS the class never exists,
+   so content is always visible. Only opacity/transform/translate animate.
+   ========================================================================== */
+
+/* Tier 1 — scroll reveals (JS tags units with .rv and staggers delays) */
+html.has-motion .rv{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.6,.2,1),transform .55s cubic-bezier(.2,.6,.2,1)}
+html.has-motion .rv.in{opacity:1;transform:none}
+
+/* Tier 2 — hero entrance: copy rises in sequence, photo settles, amber sweeps */
+html.has-motion .hero-copy>*{animation:heroUp .6s cubic-bezier(.2,.6,.2,1) both}
+html.has-motion .hero-copy>*:nth-child(1){animation-delay:.05s}
+html.has-motion .hero-copy>*:nth-child(2){animation-delay:.14s}
+html.has-motion .hero-copy>*:nth-child(3){animation-delay:.23s}
+html.has-motion .hero-copy>*:nth-child(4){animation-delay:.32s}
+html.has-motion .hero-copy>*:nth-child(5){animation-delay:.41s}
+html.has-motion .hero .media,html.has-motion .hero .media--hero{animation:heroMedia .8s cubic-bezier(.2,.6,.2,1) .25s both}
+html.has-motion .hl{background-repeat:no-repeat;background-size:0% 100%;animation:hlSweep .5s ease-out .75s forwards}
+@keyframes heroUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes heroMedia{from{opacity:0;transform:translateY(14px) scale(.975)}to{opacity:1;transform:none}}
+@keyframes hlSweep{to{background-size:100% 100%}}
+
+/* Tier 3 — ambient leaf drift (individual `translate` composes with each
+   leaf's existing transform, so every rotation is preserved) */
+html.has-motion .leaf-bg{animation:leafDrift 26s ease-in-out infinite alternate}
+@keyframes leafDrift{from{translate:0 0}to{translate:16px 12px}}
+
+/* Tier 3 — micro-interactions */
+.media-img{transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.tw:hover .media-img,.act:hover .media-img,.stile:hover .media-img,.path:hover .media-img{transform:scale(1.045)}
+.svc-go,.path-go,.tw-link{display:inline-flex;transition:transform .18s ease}
+.svc:hover .svc-go,.path:hover .path-go,.tw:hover .tw-link{transform:translateX(4px)}
+.site-head{transition:box-shadow .25s ease}
+.site-head.scrolled{box-shadow:0 8px 28px -14px rgba(17,24,38,.22)}

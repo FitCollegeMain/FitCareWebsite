@@ -162,6 +162,13 @@ Implemented and verified in this prototype:
   filters (`aria-pressed`), multi-step form (focus moves to each step's heading)
 - Form fields labelled; errors as visible text adjacent to the field
 - `prefers-reduced-motion` kills all transitions/animations globally
+- **Motion system** (scroll reveals, hero entrance, ambient leaf drift,
+  count-up, hover micro-interactions): everything is gated on
+  `html.has-motion`, which `js/site.js` adds only when reduced motion is NOT
+  requested and IntersectionObserver exists — so no content is ever hidden
+  for no-JS, old-browser or reduced-motion users. Only `opacity`,
+  `transform` and `translate` are animated (compositor-friendly). Preserve
+  this gating pattern when porting.
 - Body text ≥ 17px; participant-facing copy aims at reading grade ~7
 - Alt text conventions on all media placeholders — real photos MUST get descriptive
   alt text (no filename junk; the old site had `ubcsbdkuhsjdhochjaygsyc.jpg`)
