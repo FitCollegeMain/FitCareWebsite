@@ -424,3 +424,6 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px
 .play-badge{position:absolute;z-index:1;width:46px;height:46px;border-radius:999px;background:rgba(13,33,64,.78);color:#fff;display:grid;place-items:center;pointer-events:none}
 .social-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 @media (max-width:960px){.social-grid{grid-template-columns:1fr 1fr}}
+
+/* ---------- YouTube Shorts tiles (social panel) ---------- */
+.media--short{aspect-ratio:9/16}

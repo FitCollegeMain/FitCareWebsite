@@ -509,9 +509,12 @@ ACTIVITIES_PAGE = """
 </section>
 ACT_CTA
 """.replace("WK1", "\n".join([
-    act_card("Social", "Lawn bowls &amp; lunch", "A friendly roll-up followed by lunch with the crew. All abilities welcome."),
-    act_card("Fitness", "Group fitness", "Move at your own pace with a team that cheers you on."),
-    act_card("Creative", "Pottery studio", "Get your hands dirty and make something worth keeping."),
+    act_card("Social", "Lawn bowls &amp; lunch", "A friendly roll-up followed by lunch with the crew. All abilities welcome.",
+             img="@/assets/img/act-lawn-bowls.jpg", img_alt="A lawn bowler releases a bowl on a village green while teammates watch"),
+    act_card("Fitness", "Group fitness", "Move at your own pace with a team that cheers you on.",
+             img="@/assets/img/act-group-fitness.jpg", img_alt="An outdoor group fitness class mid-move on a sunny park track"),
+    act_card("Creative", "Pottery studio", "Get your hands dirty and make something worth keeping.",
+             img="@/assets/img/act-pottery.jpg", img_alt="Hands shaping a small clay pot at a busy pottery class table"),
 ])).replace("WK2", "\n".join([
     act_card("Outings", "Local markets trip", "Wander the stalls, grab a coffee, take home something good."),
     act_card("Fitness", "Aqua fitness", "Low-impact, high-fun water workout with the swim crew."),

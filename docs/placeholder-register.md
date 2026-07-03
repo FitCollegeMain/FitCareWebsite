@@ -21,6 +21,8 @@ as real. Owner column: **C** = client, **D** = developer, **C+D** = both.
 | Location heroes: one genuine local shot per region (×4) | location pages | C |
 | Support worker portraits — **standard set &amp; first portrait LIVE 3 Jul 2026** (Brooke, black FITCare polo on plain background, `assets/img/team/brooke.jpg`). Remaining 39+ portraits to the same standard. | team directory + profiles + team sections | C |
 | Activities photo **DELIVERED** (beach selfie, live on Activities) — source is 206px; supply a higher-resolution original if one exists. | activities | C |
+| Activity card photos **DELIVERED 3 Jul 2026** — pottery, group fitness, lawn bowls (Unsplash stock, licence-free; live on home + Activities). Recommend swapping for genuine FITCare activity shots when captured — the brief prefers real photography. | home + activities | ✔ / C later |
+| YouTube panel thumbnails **DELIVERED 3 Jul 2026** — 4 real FITCare Shorts screenshots seeded as static tiles; production feed replaces them automatically (dev README §8b). | home | ✔ |
 | Activity photos (one per recurring activity) | activities + home + location highlights | C |
 | Team/group shot | careers | C |
 | Every image needs descriptive alt text at upload — no filename junk | site-wide | C+D |
