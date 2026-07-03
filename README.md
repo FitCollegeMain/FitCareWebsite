@@ -15,7 +15,7 @@ High-fidelity, fully navigable website prototype for [FITCare Support Services](
 | Phase | Deliverable | Status |
 |---|---|---|
 | 1. Foundations | Design tokens, type, homepage concept — `prototype/phase1-homepage-concept.html` | ✅ **Approved 3 Jul 2026** |
-| 2. Component library | `/components.html` with all §7 brief components | 🔨 In progress |
+| 2. Component library | `prototype/phase2-component-library.html` — all §7 brief components, working + documented | 🟡 **Built — awaiting review** |
 | 3. Core pages | Home, Services hub + one service page, one location page, Get Started flow | ⬜ |
 | 4. Remaining pages | All other service/location pages, Team, Activities, Coordinators, About, Resources, Careers, Contact | ⬜ |
 | 5. Handoff pack | Developer README, redirect map, accessibility notes, placeholder register | ⬜ |
