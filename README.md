@@ -17,8 +17,17 @@ High-fidelity, fully navigable website prototype for [FITCare Support Services](
 | 1. Foundations | Design tokens, type, homepage concept — `prototype/phase1-homepage-concept.html` | ✅ **Approved 3 Jul 2026** |
 | 2. Component library | `prototype/phase2-component-library.html` — all §7 brief components, working + documented | ✅ **Approved 3 Jul 2026** |
 | 3. Core pages | `site/` — Home, Services hub, Health/Fitness/Wellbeing service page, Sunshine Coast location page, Get Started flow + shared `css/tokens.css`, `css/site.css`, `js/site.js` | ✅ **Approved 3 Jul 2026** |
-| 4. Remaining pages | All service/location instances, Team + profile template, Activities, Coordinators, About, Careers, Contact, Resources (NDIS guide, FAQs, News + article template, Feedback & Complaints), Accessibility Statement | 🟡 **Built — awaiting review** |
-| 5. Handoff pack | Developer README, redirect map, accessibility notes, placeholder register | ⬜ |
+| 4. Remaining pages | All service/location instances, Team + profile template, Activities, Coordinators, About, Careers, Contact, Resources (NDIS guide, FAQs, News + article template, Feedback & Complaints), Accessibility Statement | ✅ **Approved 3 Jul 2026** |
+| 5. Handoff pack | [`README-FOR-DEVELOPER.md`](README-FOR-DEVELOPER.md) · [`docs/redirect-map.md`](docs/redirect-map.md) · [`docs/placeholder-register.md`](docs/placeholder-register.md) | ✅ **Delivered 3 Jul 2026** |
+
+## Handoff
+
+The prototype is complete. The production developer starts at
+[`README-FOR-DEVELOPER.md`](README-FOR-DEVELOPER.md) — architecture, tokens,
+components, form logic, the 301 redirect map, accessibility requirements and the
+pre-launch checklist. The launch gate is an empty
+[`docs/placeholder-register.md`](docs/placeholder-register.md): every sample item
+is chip-flagged in the prototype and listed there with an owner.
 
 ## Approved design decisions (Phase 1, 3 Jul 2026)
 
