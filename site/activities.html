@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Activities | FITCare Support Services</title>
-<meta name="description" content="Activities — page under construction in the FITCare rebuild prototype.">
-<meta property="og:title" content="Activities | FITCare Support Services">
-<meta property="og:description" content="Activities — page under construction in the FITCare rebuild prototype.">
+<title>Activities Calendar | FITCare Support Services</title>
+<meta name="description" content="Weekly group activities across fitness, social, creative and outings — all abilities welcome, support workers included.">
+<meta property="og:title" content="Activities Calendar | FITCare Support Services">
+<meta property="og:description" content="Weekly group activities across fitness, social, creative and outings — all abilities welcome, support workers included.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FITCare Support Services">
 <link rel="stylesheet" href="css/tokens.css">
@@ -37,17 +37,63 @@
 </header>
 <main id="main">
 
-<div class="stub">
-  <div class="stub-inner">
-    <span class="chip">Coming in Phase 4</span>
-    <h1>Activities</h1>
-    <p>This page is scoped in the project brief and will be built in Phase 4 of the prototype. The navigation is already final so every journey can be click-tested today.</p>
-    <div class="hero-ctas" style="justify-content:center">
-      <a class="btn btn--primary" href="get-started.html">Get started</a>
-      <a class="btn btn--ghost" href="index.html">Back to home</a>
+<section class="section" style="padding-bottom:clamp(32px,5vw,56px)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="eyebrow"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg> Activities</span>
+      <h1 style="font-size:clamp(2.1rem,4.6vw,3.2rem);font-weight:800">Something on every week</h1>
+      <p>Group activities across fitness, social, creative and outings — all abilities welcome, support workers included. This calendar is plain HTML: readable by everyone, with or without JavaScript. <span class="chip chip--sample">Sample schedule — real calendar content migrates from the current site</span></p>
     </div>
   </div>
-</div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="filter-row" data-filter-group="acts" role="group" aria-label="Filter activities by category">
+      <button class="fbtn" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="fbtn" type="button" data-filter="fitness" aria-pressed="false">Fitness</button>
+      <button class="fbtn" type="button" data-filter="social" aria-pressed="false">Social</button>
+      <button class="fbtn" type="button" data-filter="creative" aria-pressed="false">Creative</button>
+      <button class="fbtn" type="button" data-filter="outings" aria-pressed="false">Outings</button>
+    </div>
+    <div data-filter-items="acts">
+      <section class="week" aria-labelledby="wk1">
+        <h3 id="wk1">This week <small>[dates from calendar]</small></h3>
+        <div class="act-grid">
+          <div class="act" data-tags="social"><div class="media media--wide" role="img" aria-label="Placeholder photo: Lawn bowls &amp; lunch"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Social</span><h3>Lawn bowls &amp; lunch</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>A friendly roll-up followed by lunch with the crew. All abilities welcome.</p></div></div>
+<div class="act" data-tags="fitness"><div class="media media--wide" role="img" aria-label="Placeholder photo: Group fitness"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Fitness</span><h3>Group fitness</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Move at your own pace with a team that cheers you on.</p></div></div>
+<div class="act" data-tags="creative"><div class="media media--wide" role="img" aria-label="Placeholder photo: Pottery studio"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Creative</span><h3>Pottery studio</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Get your hands dirty and make something worth keeping.</p></div></div>
+        </div>
+      </section>
+      <section class="week" aria-labelledby="wk2">
+        <h3 id="wk2">Next week <small>[dates from calendar]</small></h3>
+        <div class="act-grid">
+          <div class="act" data-tags="outings"><div class="media media--wide" role="img" aria-label="Placeholder photo: Local markets trip"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Outings</span><h3>Local markets trip</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Wander the stalls, grab a coffee, take home something good.</p></div></div>
+<div class="act" data-tags="fitness"><div class="media media--wide" role="img" aria-label="Placeholder photo: Aqua fitness"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Fitness</span><h3>Aqua fitness</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Low-impact, high-fun water workout with the swim crew.</p></div></div>
+<div class="act" data-tags="social"><div class="media media--wide" role="img" aria-label="Placeholder photo: Games afternoon"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Social</span><h3>Games afternoon</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Board games, card games and a fair bit of friendly rivalry.</p></div></div>
+<div class="act" data-tags="creative"><div class="media media--wide" role="img" aria-label="Placeholder photo: Art &amp; craft"><div class="media-label"><strong>Placeholder</strong>Photo</div></div><div class="act-body"><span class="chip">Creative</span><h3>Art &amp; craft</h3><div class="act-when"><span>[Day]</span><span>[Time]</span><span>[Venue]</span></div><p>Paint, paper, glue and good company — beginners very welcome.</p></div></div>
+        </div>
+      </section>
+    </div>
+    <div class="steps-note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span><strong>Want in?</strong> Ask your Service Coordinator or call 1300 348 227 — we'll help with transport too.</span>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta-final">
+      <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
+      <h2>See something you like?</h2>
+      <p>Tell us which activity caught your eye and we'll sort the rest — including getting there.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--light" href="get-started.html">Get started online</a>
+        <a class="btn btn--outline-light" href="tel:1300348227">Call 1300 348 227</a>
+      </div>
+      <p class="cta-small">Support coordinators: <a href="get-started.html?who=coordinator" style="color:#fff">start a referral here</a>.</p>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="foot">
   <div class="wrap">

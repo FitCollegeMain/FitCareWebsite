@@ -852,28 +852,11 @@ PAGES = {
     },
 }
 
+# Remaining stubs: legal copy is a client deliverable (see Phase 5 placeholder
+# register). Everything else is built by tools/pages_phase4.py.
 STUBS = [
-    ("services/daily-living-support.html", "Daily Living Support", "services"),
-    ("services/social-community-participation.html", "Social & Community Participation", "services"),
-    ("services/transport-travel.html", "Transport & Travel", "services"),
-    ("services/aged-care-supports.html", "Aged Care Supports", "services"),
-    ("locations/index.html", "Service Areas", "locations"),
-    ("locations/gympie.html", "Gympie", "locations"),
-    ("locations/moreton-bay.html", "Moreton Bay", "locations"),
-    ("locations/north-brisbane.html", "North Brisbane", "locations"),
-    ("team/index.html", "Meet Our Support Workers", "team"),
-    ("activities.html", "Activities", "activities"),
-    ("coordinators.html", "For Support Coordinators", "coordinators"),
-    ("about.html", "About FITCare", None),
-    ("careers.html", "Careers at FITCare", None),
-    ("contact.html", "Contact Us", None),
-    ("resources/new-to-the-ndis.html", "New to the NDIS?", None),
-    ("resources/faqs.html", "FAQs", None),
-    ("resources/news.html", "News & Resources", None),
-    ("resources/feedback-complaints.html", "Feedback & Complaints", None),
     ("privacy.html", "Privacy Policy", None),
     ("terms.html", "Terms & Conditions", None),
-    ("accessibility.html", "Accessibility Statement", None),
 ]
 
 STUB_BODY = """

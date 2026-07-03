@@ -16,8 +16,8 @@ High-fidelity, fully navigable website prototype for [FITCare Support Services](
 |---|---|---|
 | 1. Foundations | Design tokens, type, homepage concept — `prototype/phase1-homepage-concept.html` | ✅ **Approved 3 Jul 2026** |
 | 2. Component library | `prototype/phase2-component-library.html` — all §7 brief components, working + documented | ✅ **Approved 3 Jul 2026** |
-| 3. Core pages | `site/` — Home, Services hub, Health/Fitness/Wellbeing service page, Sunshine Coast location page, Get Started flow + shared `css/tokens.css`, `css/site.css`, `js/site.js` | 🟡 **Built — awaiting review** |
-| 4. Remaining pages | All other service/location pages, Team, Activities, Coordinators, About, Resources, Careers, Contact | ⬜ |
+| 3. Core pages | `site/` — Home, Services hub, Health/Fitness/Wellbeing service page, Sunshine Coast location page, Get Started flow + shared `css/tokens.css`, `css/site.css`, `js/site.js` | ✅ **Approved 3 Jul 2026** |
+| 4. Remaining pages | All service/location instances, Team + profile template, Activities, Coordinators, About, Careers, Contact, Resources (NDIS guide, FAQs, News + article template, Feedback & Complaints), Accessibility Statement | 🟡 **Built — awaiting review** |
 | 5. Handoff pack | Developer README, redirect map, accessibility notes, placeholder register | ⬜ |
 
 ## Approved design decisions (Phase 1, 3 Jul 2026)

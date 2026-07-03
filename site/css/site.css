@@ -356,3 +356,38 @@ fieldset.invalid>.err{display:block}
 .stub-inner{display:grid;gap:18px;justify-items:center;max-width:520px}
 .stub h1{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800}
 .stub p{color:var(--muted)}
+
+/* ---------- data tables (coordinator categories etc.) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-s);background:var(--card)}
+table.tbl{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:520px}
+.tbl th{text-align:left;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;padding:14px 18px;border-bottom:2px solid var(--line)}
+.tbl td{padding:12px 18px;border-bottom:1px solid var(--line);color:var(--body-c)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td b{color:var(--ink)}
+
+/* ---------- simple forms (careers, contact, feedback) ---------- */
+.sform{display:grid;gap:0;max-width:640px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:clamp(24px,4vw,36px);box-shadow:var(--shadow-card)}
+.form-fields{display:grid;gap:18px}
+.sform .form-success{display:none;text-align:center;gap:14px;justify-items:center;padding-block:16px}
+.sform.done .form-success{display:grid}
+.sform.done .form-fields{display:none}
+
+/* ---------- article template ---------- */
+.article{max-width:720px;margin-inline:auto;display:grid;gap:22px}
+.article h1{font-size:clamp(1.9rem,4vw,2.6rem)}
+.article p{color:var(--body-c)}
+.article .lede{font-size:1.1875rem;color:var(--muted)}
+.article-meta{font-size:.84375rem;color:var(--muted);font-weight:600;display:flex;gap:14px;flex-wrap:wrap}
+.article blockquote{margin:0;padding:8px 0 8px 22px;border-left:4px solid var(--sun-400);font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.25rem;color:var(--ink)}
+
+/* ---------- info cards (about, contact) ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:24px 26px;display:grid;gap:8px;align-content:start}
+.info-card h3{font-size:1.05rem;font-weight:800}
+.info-card p{font-size:.9375rem;color:var(--muted)}
+.info-card a{font-weight:700}
+@media (max-width:860px){.info-grid{grid-template-columns:1fr}}
+
+/* ---------- news cards ---------- */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:860px){.news-grid{grid-template-columns:1fr}}

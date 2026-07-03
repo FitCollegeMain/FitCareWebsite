@@ -187,3 +187,38 @@
     render(false);
   }
 })();
+
+/* ---- simple forms (careers / contact / feedback): validate, log, success ---- */
+(function () {
+  "use strict";
+  document.querySelectorAll("[data-simple-form]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      form.querySelectorAll("[required]").forEach(function (inp) {
+        var f = inp.closest(".field");
+        var valid = inp.value.trim().length > 0;
+        if (f) f.classList.toggle("invalid", !valid);
+        if (!valid) ok = false;
+      });
+      if (!ok) {
+        var fi = form.querySelector(".field.invalid input, .field.invalid textarea, .field.invalid select");
+        if (fi) fi.focus();
+        return;
+      }
+      var data = {};
+      new FormData(form).forEach(function (v, k) {
+        data[k] = data[k] !== undefined ? [].concat(data[k], v) : v;
+      });
+      /* Backend swap-in point: POST `data` to the production endpoint here. */
+      console.log("Form submission:", data);
+      form.classList.add("done");
+      var s = form.querySelector(".form-success h3");
+      if (s) { s.setAttribute("tabindex", "-1"); s.focus(); }
+    });
+    form.addEventListener("input", function (e) {
+      var f = e.target.closest(".field.invalid");
+      if (f) f.classList.remove("invalid");
+    });
+  });
+})();
