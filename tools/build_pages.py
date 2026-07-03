@@ -345,6 +345,38 @@ TRUST_BAR
   </div>
 </section>
 
+<section class="social" id="social" aria-label="Latest from our channels">
+  <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>See the energy for yourself</h2>
+      <p>The latest from our YouTube channel — real activities, real people, this week. <span class="chip chip--sample">Sample tiles — the live feed pulls the 4 newest videos automatically in production</span></p>
+    </div>
+    <div class="social-grid" data-feed="youtube-latest-4">
+      <a class="stile" href="#social">
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Latest video</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title — newest upload]</span>
+      </a>
+      <a class="stile" href="#social">
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the second most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 2</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+      <a class="stile" href="#social">
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the third most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 3</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+      <a class="stile" href="#social">
+        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the fourth most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 4</div></div>
+        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
+      </a>
+    </div>
+    <div class="social-ctas">
+      <a class="btn btn--light" href="https://www.youtube.com/@fitcaresupportservices">Watch on YouTube</a>
+      <a class="btn btn--outline-light" href="https://www.instagram.com/fitcare.supportservices/">Follow @fitcare.supportservices</a>
+    </div>
+  </div>
+</section>
+
 <section class="section section--alt" id="services">
   <div class="wrap">
     <div class="sec-head">
@@ -391,37 +423,6 @@ TRUST_BAR
   </div>
 </section>
 
-<section class="social" id="social" aria-label="Latest from our channels">
-  <svg class="leaf-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 9 3 21 3 21 15 15 21 3 21Z" fill="currentColor"/></svg>
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>See the energy for yourself</h2>
-      <p>The latest from our YouTube channel — real activities, real people, this week. <span class="chip chip--sample">Sample tiles — the live feed pulls the 4 newest videos automatically in production</span></p>
-    </div>
-    <div class="social-grid" data-feed="youtube-latest-4">
-      <a class="stile" href="#social">
-        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Latest video</div></div>
-        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title — newest upload]</span>
-      </a>
-      <a class="stile" href="#social">
-        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the second most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 2</div></div>
-        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
-      </a>
-      <a class="stile" href="#social">
-        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the third most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 3</div></div>
-        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
-      </a>
-      <a class="stile" href="#social">
-        <div class="media media--wide" role="img" aria-label="Placeholder thumbnail for the fourth most recent YouTube video"><span class="play-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><div class="media-label"><strong>YouTube</strong>Video 4</div></div>
-        <span class="stile-cap"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 4 12 4 12 4s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.4c0-1.9-.2-3.8-.2-3.8z"/></svg>[Video title]</span>
-      </a>
-    </div>
-    <div class="social-ctas">
-      <a class="btn btn--light" href="https://www.youtube.com/@fitcaresupportservices">Watch on YouTube</a>
-      <a class="btn btn--outline-light" href="https://www.instagram.com/fitcare.supportservices/">Follow @fitcare.supportservices</a>
-    </div>
-  </div>
-</section>
 
 <section class="section" id="team">
   <div class="wrap">
