@@ -409,7 +409,23 @@ TRUST_BAR
   </div>
 </section>
 
-<section class="section" id="how">
+<section class="section" id="activities">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">LEAF Group activities</span>
+      <h2>Something on every week</h2>
+      <p>Fitness, social, creative and outings — a real calendar, readable by everyone (and by Google, too). <span class="chip chip--sample">Sample cards — real schedule migrates in Phase 4</span></p>
+    </div>
+    <div class="act-grid">
+      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: lawn bowls"><div class="media-label"><strong>Placeholder</strong>Photo — lawn bowls</div></div><div class="act-body"><span class="chip">Social</span><h3>Lawn bowls &amp; lunch</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>A friendly roll-up followed by lunch with the crew. All abilities welcome.</p></div></div>
+      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: pottery class"><div class="media-label"><strong>Placeholder</strong>Photo — pottery</div></div><div class="act-body"><span class="chip">Creative</span><h3>Pottery studio</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>Get your hands dirty and make something worth keeping.</p></div></div>
+      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: group fitness session"><div class="media-label"><strong>Placeholder</strong>Photo — group fitness</div></div><div class="act-body"><span class="chip">Fitness</span><h3>Group fitness</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>Move at your own pace with a team that cheers you on.</p></div></div>
+    </div>
+    <p style="margin-top:22px"><a href="@/activities.html"><strong>See what's on →</strong></a></p>
+  </div>
+</section>
+
+<section class="section section--alt" id="how">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">LEAF How it works</span>
@@ -438,21 +454,6 @@ TRUST_BAR
   </div>
 </section>
 
-<section class="section section--alt" id="activities">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">LEAF Group activities</span>
-      <h2>Something on every week</h2>
-      <p>Fitness, social, creative and outings — a real calendar, readable by everyone (and by Google, too). <span class="chip chip--sample">Sample cards — real schedule migrates in Phase 4</span></p>
-    </div>
-    <div class="act-grid">
-      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: lawn bowls"><div class="media-label"><strong>Placeholder</strong>Photo — lawn bowls</div></div><div class="act-body"><span class="chip">Social</span><h3>Lawn bowls &amp; lunch</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>A friendly roll-up followed by lunch with the crew. All abilities welcome.</p></div></div>
-      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: pottery class"><div class="media-label"><strong>Placeholder</strong>Photo — pottery</div></div><div class="act-body"><span class="chip">Creative</span><h3>Pottery studio</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>Get your hands dirty and make something worth keeping.</p></div></div>
-      <div class="act"><div class="media media--wide" role="img" aria-label="Placeholder photo: group fitness session"><div class="media-label"><strong>Placeholder</strong>Photo — group fitness</div></div><div class="act-body"><span class="chip">Fitness</span><h3>Group fitness</h3><div class="act-when"><span>[Day &amp; time]</span></div><p>Move at your own pace with a team that cheers you on.</p></div></div>
-    </div>
-    <p style="margin-top:22px"><a href="@/activities.html"><strong>See what's on →</strong></a></p>
-  </div>
-</section>
 
 <section class="section" aria-label="What families say">
   <div class="wrap">
