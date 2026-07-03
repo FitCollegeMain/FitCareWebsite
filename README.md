@@ -36,6 +36,7 @@ is chip-flagged in the prototype and listed there with an owner.
 3. **Dark mode** — ships alongside light; token-level theming.
 4. **Voice** — participant-first-person: *"With the right support, I do it my way."* Family and coordinator pages keep their own registers per the brief.
 5. **Logo** — delivered 3 Jul 2026 as transparent PNG; live in header (light + white dark-mode variant) and footer. First real photography also live: home hero, Social & Community hero, Brooke's portrait, activities shot.
+6. **Design direction** — confirmed 3 Jul 2026: **"Coastal Clarity" stays** (the built system). Three alternate directions (Deep Blue Immersive, Sunshine Energy, Editorial Split) were rendered and reviewed in the design lab; all reuse the approved tokens and remain available in session artifacts if ever wanted.
 
 ## Repository layout
 
