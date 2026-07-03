@@ -16,10 +16,10 @@ as real. Owner column: **C** = client, **D** = developer, **C+D** = both.
 
 | Item | Where | Owner |
 |---|---|---|
-| Hero photo or re-edited hero video **with captions** (source: `/video/fitcare-web-edit.mp4`) | home | C |
-| Service page heroes: training session, daily-living, community outing, transport, aged-care class | 5 service pages | C |
+| Home hero photo — **SELECTED 3 Jul 2026** (support worker + participant selfie at coastal lookout, Hawaiian shirt/peace sign) — awaiting file transfer as `assets/img/hero-lookout-selfie.jpg`; alt text already written into the slot. Confirm participant consent is on file. | home | C |
+| Service page heroes: training session, daily-living, community outing, transport, aged-care class. Candidates already sighted: boat-outing shot (worker + participant on the water) suits Social &amp; Community or the story card; beach selfie suits Activities. | 5 service pages | C |
 | Location heroes: one genuine local shot per region (×4) | location pages | C |
-| Support worker portraits (40+, consistent style) | team directory + profiles + team sections | C |
+| Support worker portraits (40+, consistent style) — **standard set 3 Jul 2026**: headshot in black FITCare polo on plain light background (first portrait sighted, awaiting file as `assets/img/team/<name>.jpg`) | team directory + profiles + team sections | C |
 | Activity photos (one per recurring activity) | activities + home + location highlights | C |
 | Team/group shot | careers | C |
 | Every image needs descriptive alt text at upload — no filename junk | site-wide | C+D |
