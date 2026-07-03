@@ -202,12 +202,20 @@ router_js = """
 router_js = router_js.replace("__ASSETS__", json.dumps(ASSETS)).replace("__TITLES__", json.dumps(titles))
 
 demo_note = ('<div class="phase-note"><strong>Wired-up demo — the whole prototype in one page.</strong> '
-             'Every link, form and filter works. Sample content is watermarked; PDFs and the members '
-             'portal open the live site.</div>')
+             'Every link, form and filter works. PDFs and the members portal open the live site.</div>')
+
+# Presentation copy: strip the amber sample/placeholder chips (client request,
+# 3 Jul 2026). The site/ pages KEEP their chips — they drive the launch gate
+# in docs/placeholder-register.md.
+all_sections = "\n".join(sections)
+all_sections = re.sub(r'<span class="chip chip--sample"[^>]*>.*?</span>', "", all_sections, flags=re.S)
+all_sections = re.sub(r"<p[^>]*>\s*</p>", "", all_sections)
+header = re.sub(r'<span class="chip chip--sample"[^>]*>.*?</span>', "", header, flags=re.S)
+footer = re.sub(r'<span class="chip chip--sample"[^>]*>.*?</span>', "", footer, flags=re.S)
 
 out = ("<title>FITCare — Full Website Demo</title>\n"
        "<style>\n" + tokens + "\n" + sitecss + "\n.route[hidden]{display:none}\n</style>\n"
-       + demo_note + "\n" + header + "\n<main id=\"main\">\n" + "\n".join(sections)
+       + demo_note + "\n" + header + "\n<main id=\"main\">\n" + all_sections
        + "\n</main>\n" + footer + "\n" + callbar
        + "\n<script>\n" + js + "\n</script>\n<script>\n" + router_js + "\n</script>\n")
 
