@@ -15,8 +15,8 @@ High-fidelity, fully navigable website prototype for [FITCare Support Services](
 | Phase | Deliverable | Status |
 |---|---|---|
 | 1. Foundations | Design tokens, type, homepage concept — `prototype/phase1-homepage-concept.html` | ✅ **Approved 3 Jul 2026** |
-| 2. Component library | `prototype/phase2-component-library.html` — all §7 brief components, working + documented | 🟡 **Built — awaiting review** |
-| 3. Core pages | Home, Services hub + one service page, one location page, Get Started flow | ⬜ |
+| 2. Component library | `prototype/phase2-component-library.html` — all §7 brief components, working + documented | ✅ **Approved 3 Jul 2026** |
+| 3. Core pages | `site/` — Home, Services hub, Health/Fitness/Wellbeing service page, Sunshine Coast location page, Get Started flow + shared `css/tokens.css`, `css/site.css`, `js/site.js` | 🟡 **Built — awaiting review** |
 | 4. Remaining pages | All other service/location pages, Team, Activities, Coordinators, About, Resources, Careers, Contact | ⬜ |
 | 5. Handoff pack | Developer README, redirect map, accessibility notes, placeholder register | ⬜ |
 
@@ -28,6 +28,25 @@ High-fidelity, fully navigable website prototype for [FITCare Support Services](
 4. **Voice** — participant-first-person: *"With the right support, I do it my way."* Family and coordinator pages keep their own registers per the brief.
 5. **Outstanding asset** — production logo as SVG / transparent PNG (primary + secondary versions). Header wordmark is currently a live-text recreation.
 
+## Repository layout
+
+```
+site/                    ← THE PROTOTYPE (open site/index.html in a browser — no server, no build step)
+  css/tokens.css           the one shared token file (colours, type, spacing, radii, shadows)
+  css/site.css              all component styles, token-driven
+  js/site.js                the one shared JS file (all progressive enhancement)
+  assets/fonts/             self-hosted woff2 (Bricolage Grotesque, Figtree, Dancing Script)
+  index.html                home
+  get-started.html          multi-step enquiry/referral flow (?who=coordinator pre-routes)
+  services/                 hub + 1 built landing page + 4 Phase-4 stubs
+  locations/                1 built landing page (Sunshine Coast) + hub/3 stubs
+  components.html           Phase 2 component library (self-contained, documentation)
+  …                         every IA page exists — unbuilt ones are labelled stubs so all nav resolves
+tools/build_pages.py     ← page generator (header/footer/nav live in one place); output is committed
+prototype/               ← Phase 1 & 2 review snapshots (self-contained single files)
+docs/                    ← brief, content audit, brand guide
+```
+
 ## Viewing the prototype
 
-Every prototype file is self-contained (fonts inlined as data URIs, no external requests). Open any `.html` file straight from disk in a browser — no server, no build step.
+Open `site/index.html` straight from disk — every page works with `file://`, JS disabled included. Phase 1/2 snapshot files in `prototype/` are fully self-contained (fonts inlined).
