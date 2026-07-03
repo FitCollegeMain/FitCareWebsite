@@ -174,27 +174,23 @@ placeholder register).
 
 ## 8b. Home social feed panel (`.social`, home page)
 
-The homepage panel shows the **4 most recent YouTube videos + 4 most recent
-Instagram posts**, auto-updating. The prototype ships the component with sample
-tiles (`data-feed="youtube-latest-4 instagram-latest-4"` marks the mount point);
-production wires the data:
+The homepage panel shows the **4 most recent YouTube videos**, auto-updating.
+(An Instagram row was built and then removed by client decision on 3 Jul 2026 —
+"too busy"; the Follow button remains. Don't re-add without asking.)
+The prototype ships the component with sample tiles
+(`data-feed="youtube-latest-4"` marks the mount point); production wires the data:
 
-- **YouTube (no API key needed):** fetch the channel's RSS feed
+- **Channel:** `https://www.youtube.com/@fitcaresupportservices` (supplied by
+  client 3 Jul 2026). Resolve the `UC…` channel ID once from the channel page
+  source (`"externalId"`), then fetch the RSS feed
   `https://www.youtube.com/feeds/videos.xml?channel_id=UC…` server-side on a
-  schedule (hourly is plenty), take the first 4 entries → video ID + title.
-  Thumbnail: `https://i.ytimg.com/vi/<ID>/hqdefault.jpg`. Render each tile as
-  the §5 video facade — clicking injects a `youtube-nocookie.com/embed/<ID>`
-  iframe; nothing loads before the click. Channel ID comes from the client
-  (see placeholder register).
-- **Instagram:** requires the client's Instagram account converted to a
-  Business/Creator account linked to their Facebook Page, then the Graph API:
-  `GET /<ig-user-id>/media?fields=media_url,permalink,caption,timestamp&limit=4`
-  with a long-lived token (refresh ~60 days — automate it). Cache media
-  server-side; tile links to `permalink`; build alt text from `caption`
-  (truncate ~100 chars). Do **not** fetch client-side (token exposure + CORS).
-- Cache both feeds server-side and render into the HTML (keeps the page fast,
-  crawlable, and working with JS off). If a feed fails, fall back to the last
-  cached set — never render an empty panel.
+  schedule (hourly is plenty) — no API key needed. Take the first 4 entries →
+  video ID + title. Thumbnail: `https://i.ytimg.com/vi/<ID>/hqdefault.jpg`.
+- Render each tile as the §5 video facade — clicking injects a
+  `youtube-nocookie.com/embed/<ID>` iframe; nothing loads before the click.
+- Cache the feed server-side and render into the HTML (fast, crawlable,
+  JS-off safe). On fetch failure, fall back to the last cached set — never
+  render an empty panel.
 
 ## 9. SEO & analytics notes
 
