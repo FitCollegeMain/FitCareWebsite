@@ -1,5 +1,7 @@
 # FITCare Support Services — Website Rebuild Prototype
 
+**🌐 Live demo: [fitcollegemain.github.io/FitCareWebsite](https://fitcollegemain.github.io/FitCareWebsite/)** — deployed automatically from `site/` on every push by [`deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+
 High-fidelity, fully navigable website prototype for [FITCare Support Services](https://fitcaresupportservices.com.au) — a registered NDIS provider in South East Queensland. This prototype is the definitive reference for the production build: the developer's job is translation, not interpretation.
 
 ## Source documents
