@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>FITCare — Site Map: Old vs New</title>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-weight:200 800;font-stretch:100%;src:url('../site/assets/fonts/bricolage-grotesque.woff2') format('woff2')}
+@font-face{font-family:'Figtree';font-weight:300 900;src:url('../site/assets/fonts/figtree.woff2') format('woff2')}
+
+:root{
+  --blue:#1E4689;--blue8:#16345F;--blue9:#0D2140;--blue1:#D9E4F5;--blue05:#EAF1FA;
+  --sun:#FFB528;--sun50:#FFF6E0;--sun-text:#8A5A00;
+  --ink:#111826;--body:#3D4657;--muted:#5A6478;--line:#E3E8F0;--paper:#FFFFFF;
+  --ok:#15703E;--ok50:#E7F6EE;--bad:#B42318;--bad50:#FDECEC;
+}
+*{box-sizing:border-box;margin:0}
+html,body{background:#fff}
+body{font-family:'Figtree',system-ui,sans-serif;color:var(--body);font-size:10.5pt;line-height:1.45}
+@page{size:A3 landscape;margin:0}
+.sheet{width:420mm;height:297mm;padding:13mm 15mm;page-break-after:always;position:relative;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.sheet:last-child{page-break-after:auto}
+
+.head{display:flex;align-items:flex-end;gap:24px;border-bottom:3px solid var(--ink);padding-bottom:6mm;margin-bottom:7mm}
+.head img{height:16mm;width:auto}
+.head .t h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:22pt;color:var(--ink);letter-spacing:-.01em}
+.head .t p{color:var(--muted);font-size:10pt;margin-top:2px}
+.head .meta{margin-left:auto;text-align:right;font-size:8.5pt;color:var(--muted)}
+.head .meta b{color:var(--ink)}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-bottom:6mm;font-size:8.5pt;color:var(--muted)}
+.legend b{color:var(--ink);font-size:9pt;margin-right:2px}
+.key{display:inline-flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+
+/* tree */
+.tree{font-size:9.5pt}
+.tree ul{list-style:none;padding-left:9mm;position:relative}
+.tree>ul{padding-left:0}
+.tree ul ul li{position:relative}
+.tree ul ul li::before{content:"";position:absolute;left:-6mm;top:0;bottom:0;border-left:1.5px solid var(--blue1)}
+.tree ul ul li::after{content:"";position:absolute;left:-6mm;top:5.4mm;width:5mm;border-top:1.5px solid var(--blue1)}
+.tree ul ul li:last-child::before{bottom:auto;height:5.4mm}
+.node{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:2.2mm 3.4mm;margin:1.1mm 0;break-inside:avoid}
+.node b{font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink);font-size:10pt}
+.node code{font-family:ui-monospace,Menlo,monospace;font-size:8pt;color:var(--muted);background:var(--blue05);padding:1px 6px;border-radius:5px}
+.node small{color:var(--muted);font-size:8pt}
+.tag{font-size:7.5pt;font-weight:700;padding:1.5px 7px;border-radius:99px;white-space:nowrap}
+.tag-bad{background:var(--bad50);color:var(--bad)}
+.tag-warn{background:var(--sun50);color:var(--sun-text)}
+.tag-ok{background:var(--ok50);color:var(--ok)}
+.tag-blue{background:var(--blue05);color:var(--blue8)}
+.n-root>.node{background:var(--blue9);border-color:var(--blue9)}
+.n-root>.node b,.n-root>.node small{color:#fff}
+.n-root>.node code{background:rgba(255,255,255,.14);color:#C9DAF5}
+.n-hub>.node{border-color:var(--blue);border-width:2px}
+.n-conv>.node{background:var(--sun50);border-color:var(--sun)}
+.n-comp>.node{border-color:var(--ok)}
+.n-stub>.node{border-style:dashed;background:#FAFBFD}
+.n-ext>.node{border-style:dotted}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 12mm;align-content:start}
+.cols .tree ul{margin:0}
+
+/* moves page */
+.moves{display:grid;grid-template-columns:1fr 1fr;gap:8mm 14mm;align-content:start}
+.move-group h3{font-family:'Bricolage Grotesque';font-weight:800;color:var(--ink);font-size:13pt;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:2px solid var(--sun)}
+.move{display:flex;align-items:center;gap:8px;padding:1.8mm 0;font-size:9.5pt;border-bottom:1px solid var(--line)}
+.move code{font-family:ui-monospace,Menlo,monospace;font-size:8.5pt;background:var(--bad50);color:var(--bad);padding:1.5px 7px;border-radius:5px;text-decoration:line-through;text-decoration-thickness:1px}
+.move .arr{color:var(--sun-text);font-weight:800}
+.move code.to{background:var(--ok50);color:var(--ok);text-decoration:none}
+.move small{color:var(--muted);font-size:8pt;margin-left:auto;text-align:right;max-width:38%}
+.foot{position:absolute;bottom:8mm;left:15mm;right:15mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--muted);border-top:1px solid var(--line);padding-top:2.5mm}
+</style>
+</head>
+<body>
+
+<!-- ================= SHEET 1 — OLD SITE ================= -->
+<section class="sheet">
+  <div class="head">
+    <img src="../site/assets/img/logo.png" alt="FITCare Support Services">
+    <div class="t">
+      <h1>Site map — current website (“old”)</h1>
+      <p>fitcaresupportservices.com.au as audited 3 July 2026 · 23 URL groups · source: content audit §2</p>
+    </div>
+    <div class="meta"><b>Sheet 1 of 3</b><br>Old structure &amp; its problems</div>
+  </div>
+  <div>
+    <div class="legend">
+      <b>Problem tags:</b>
+      <span class="key"><span class="tag tag-bad">duplicate ×3</span> same nine content blocks repeated</span>
+      <span class="key"><span class="tag tag-bad">30-field wall</span> conversion friction</span>
+      <span class="key"><span class="tag tag-warn">thin</span> little unique content</span>
+      <span class="key"><span class="tag tag-warn">buried</span> hidden in dropdown</span>
+      <span class="key"><span class="tag tag-warn">JS-only</span> invisible to search &amp; assistive tech</span>
+      <span class="key"><span class="tag tag-ok">keep</span> compliance / genuine content carried over</span>
+    </div>
+    <div class="cols">
+      <div class="tree">
+        <ul>
+          <li class="n-root"><span class="node"><b>Home</b><code>/</code><small>hero video + 9 blocks</small><span class="tag tag-bad">duplicate ×3</span></span>
+            <ul>
+              <li><span class="node"><b>Services</b><code>/services</code><span class="tag tag-bad">duplicate ×3</span></span>
+                <ul>
+                  <li><span class="node"><b>One on One Supports</b><code>/nutrition-advice</code><span class="tag tag-bad">URL/content mismatch</span></span></li>
+                  <li><span class="node"><b>Wellness Programs</b><code>/fitness-programs</code><span class="tag tag-warn">thin</span></span></li>
+                </ul>
+              </li>
+              <li><span class="node"><b>About</b><code>/about</code><small>registration categories</small><span class="tag tag-ok">keep codes</span></span></li>
+              <li><span class="node"><b>Service Areas</b><code>/locations</code><small>image + enquire only</small></span>
+                <ul>
+                  <li><span class="node"><b>Sunshine Coast</b><code>/locations/sunshine-coast</code><span class="tag tag-warn">thin</span></span></li>
+                  <li><span class="node"><b>Gympie</b><code>/locations/gympie</code><span class="tag tag-warn">thin</span></span></li>
+                  <li><span class="node"><b>North Brisbane</b><code>/locations/north-brisbane</code><span class="tag tag-warn">thin</span></span></li>
+                  <li><span class="node"><b>Moreton Bay</b><code>/locations/moreton-bay</code><span class="tag tag-warn">thin</span></span></li>
+                </ul>
+              </li>
+              <li><span class="node"><b>Activities</b><code>/activities</code><small>calendar</small><span class="tag tag-warn">JS-only</span><span class="tag tag-warn">chaotic tags</span></span></li>
+              <li><span class="node"><b>Meet Our Support Workers</b><code>/support-workers</code><small>name grid, no bios</small><span class="tag tag-ok">keep asset</span></span>
+                <ul><li><span class="node"><b>40+ profile pages</b><code>/support-workers/{name}</code><span class="tag tag-warn">thin</span></span></li></ul>
+              </li>
+              <li><span class="node"><b>Careers</b><code>/careers</code><small>+ JD PDF</small><span class="tag tag-bad">duplicates codes</span><span class="tag tag-warn">address inconsistent</span></span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="tree">
+        <ul>
+          <li class="n-hub"><span class="node"><b>Three overlapping entry points</b><small>near-identical forms, no guidance which to use</small></span>
+            <ul>
+              <li class="n-conv"><span class="node"><b>Find a Support Worker</b><code>/book-a-support-worker</code><small>lead form + 9 blocks again</small><span class="tag tag-bad">duplicate ×3</span></span></li>
+              <li class="n-conv"><span class="node"><b>Referral / EOI</b><code>/referral</code><small>disability disclosure required up-front</small><span class="tag tag-bad">30-field wall</span></span></li>
+              <li class="n-conv"><span class="node"><b>Contact</b><code>/contact</code><small>4 enquiry types</small></span></li>
+            </ul>
+          </li>
+          <li><span class="node"><b>Register for NDIS</b><code>/register-for-ndis</code><span class="tag tag-warn">thin — one paragraph</span></span></li>
+          <li><span class="node"><b>Learn about NDIS</b><code>/learn-more-about-ndis</code></span></li>
+          <li><span class="node"><b>News</b><code>/news</code><span class="tag tag-warn">buried</span></span></li>
+          <li><span class="node"><b>FAQs</b><code>/faqs</code><small>8 genuine Q&amp;As</small><span class="tag tag-ok">keep</span><span class="tag tag-warn">buried</span></span></li>
+          <li class="n-comp"><span class="node"><b>Feedback &amp; Complaints</b><code>/feedback</code><span class="tag tag-ok">keep — NDIS Practice Standards</span><span class="tag tag-warn">buried</span></span></li>
+          <li class="n-comp"><span class="node"><b>Participant Handbook</b><code>/storage/…handbook.pdf</code><span class="tag tag-ok">keep</span></span></li>
+          <li><span class="node"><b>Terms</b><code>/terms</code> <b>· Privacy</b><code>/privacy-policy</code><small>copyright says 2023</small></span></li>
+          <li class="n-ext"><span class="node"><b>Login / Password reset</b><code>/login</code><span class="tag tag-warn">relationship to portal unclear</span></span></li>
+          <li class="n-ext"><span class="node"><b>Members portal ↗</b><code>members.fitcaresupportservices.com.au</code><span class="tag tag-ok">keep linked</span></span></li>
+        </ul>
+        <div class="legend" style="margin-top:6mm">
+          <b>Site-wide findings:</b>
+          <span class="key">zero testimonials</span>·<span class="key">one video</span>·<span class="key">no coordinator pathway</span>·<span class="key">no accessibility provisions</span>·<span class="key">empty OG metadata</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>FITCare Support Services — website rebuild</span><span>Source: fitcare-website-content-audit.md §2 · prepared 4 July 2026</span></div>
+</section>
+
+<!-- ================= SHEET 2 — NEW SITE ================= -->
+<section class="sheet">
+  <div class="head">
+    <img src="../site/assets/img/logo.png" alt="FITCare Support Services">
+    <div class="t">
+      <h1>Site map — new website (prototype, built)</h1>
+      <p>28 pages, live at fitcollegemain.github.io/FitCareWebsite · audience-first architecture</p>
+    </div>
+    <div class="meta"><b>Sheet 2 of 3</b><br>New structure</div>
+  </div>
+  <div>
+    <div class="legend">
+      <b>Key:</b>
+      <span class="key"><span class="dot" style="background:var(--blue)"></span> hub (solid blue border)</span>
+      <span class="key"><span class="dot" style="background:var(--sun)"></span> conversion (amber)</span>
+      <span class="key"><span class="dot" style="background:var(--ok)"></span> compliance (green border)</span>
+      <span class="key"><span class="dot" style="background:#fff;border:1.5px dashed var(--muted)"></span> stub — client legal copy pending</span>
+      <span class="key">↗ external</span>
+      <span class="key"><span class="tag tag-blue">template</span> one design, instanced per page</span>
+    </div>
+    <div class="cols">
+      <div class="tree">
+        <ul>
+          <li class="n-root"><span class="node"><b>Home</b><code>/</code><small>audience self-select · YouTube panel · activities</small></span>
+            <ul>
+              <li class="n-hub"><span class="node"><b>Services</b><code>/services/</code><span class="tag tag-blue">hub</span></span>
+                <ul>
+                  <li><span class="node"><b>Daily Living Support</b><code>/services/daily-living-support</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Social &amp; Community Participation</b><code>/services/social-community-participation</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Health, Fitness &amp; Wellbeing</b><code>/services/health-fitness-wellbeing</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Transport &amp; Travel</b><code>/services/transport-travel</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Aged Care Supports</b><code>/services/aged-care-supports</code><small>non-NDIS audience</small><span class="tag tag-blue">template</span></span></li>
+                </ul>
+              </li>
+              <li class="n-hub"><span class="node"><b>Service Areas</b><code>/locations/</code><span class="tag tag-blue">hub</span></span>
+                <ul>
+                  <li><span class="node"><b>Sunshine Coast</b><code>/locations/sunshine-coast</code><small>home base</small><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Gympie</b><code>/locations/gympie</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>Moreton Bay</b><code>/locations/moreton-bay</code><span class="tag tag-blue">template</span></span></li>
+                  <li><span class="node"><b>North Brisbane</b><code>/locations/north-brisbane</code><small>newest area</small><span class="tag tag-blue">template</span></span></li>
+                </ul>
+              </li>
+              <li class="n-hub"><span class="node"><b>Our Team</b><code>/team/</code><small>filterable directory, 40+ workers</small></span>
+                <ul><li><span class="node"><b>Worker profile</b><code>/team/profile-template</code><small>photo · tags · bio · “Request” action</small><span class="tag tag-blue">template</span></span></li></ul>
+              </li>
+              <li><span class="node"><b>Activities</b><code>/activities</code><small>server-rendered weekly calendar · 4 clean categories</small><span class="tag tag-ok">SEO fixed</span></span></li>
+              <li class="n-hub"><span class="node"><b>For Support Coordinators</b><code>/coordinators</code><small>codes table · capacity · fast referral</small><span class="tag tag-ok">new audience</span></span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="tree">
+        <ul>
+          <li class="n-conv"><span class="node"><b>Get Started</b><code>/get-started</code><small>3-step flow · ?who= deep links · no sensitive fields</small><span class="tag tag-warn">primary conversion</span></span></li>
+          <li><span class="node"><b>About</b><code>/about</code><small>values · registration table · FIT College RTO</small></span></li>
+          <li class="n-hub"><span class="node"><b>Resources</b><small>grouped in nav + footer</small></span>
+            <ul>
+              <li><span class="node"><b>New to the NDIS</b><code>/resources/new-to-the-ndis</code><small>plain-English guide</small></span></li>
+              <li><span class="node"><b>FAQs</b><code>/resources/faqs</code><small>all 8 genuine Q&amp;As, promoted</small></span></li>
+              <li><span class="node"><b>News</b><code>/resources/news</code></span>
+                <ul><li><span class="node"><b>Article</b><code>/resources/news-article-template</code><span class="tag tag-blue">template</span></span></li></ul>
+              </li>
+              <li class="n-comp"><span class="node"><b>Feedback &amp; Complaints</b><code>/resources/feedback-complaints</code><small>incl. NDIS Commission pathway</small><span class="tag tag-ok">promoted, not buried</span></span></li>
+              <li class="n-comp"><span class="node"><b>Participant Handbook ↗</b><small>PDF, same path as old site</small></span></li>
+            </ul>
+          </li>
+          <li><span class="node"><b>Careers</b><code>/careers</code><small>working application form · JD PDF ↗</small></span></li>
+          <li class="n-conv"><span class="node"><b>Contact</b><code>/contact</code><small>enquiry-type form · office/map</small></span></li>
+          <li class="n-comp"><span class="node"><b>Accessibility Statement</b><code>/accessibility</code><span class="tag tag-ok">WCAG 2.2 AA</span></span></li>
+          <li class="n-stub"><span class="node"><b>Privacy</b><code>/privacy</code> <b>· Terms</b><code>/terms</code><small>await client legal copy</small></span></li>
+          <li class="n-ext"><span class="node"><b>Members portal ↗</b><small>unchanged subdomain, linked in footer</small></span></li>
+          <li class="n-ext"><span class="node"><b>Component library</b><code>/components</code><small>developer documentation</small></span></li>
+        </ul>
+        <div class="legend" style="margin-top:6mm">
+          <b>Site-wide, by design:</b>
+          <span class="key">click-to-call header + mobile bar</span>·<span class="key">compliance strip w/ category codes</span>·<span class="key">testimonial slots (consent pending)</span>·<span class="key">motion system, reduced-motion safe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>FITCare Support Services — website rebuild</span><span>Every old URL 301-redirects into this structure — see sheet 3 · prepared 4 July 2026</span></div>
+</section>
+
+<!-- ================= SHEET 3 — WHAT MOVED WHERE ================= -->
+<section class="sheet">
+  <div class="head">
+    <img src="../site/assets/img/logo.png" alt="FITCare Support Services">
+    <div class="t">
+      <h1>What moved where</h1>
+      <p>Old URL → new home (full 301 table in docs/redirect-map.md) · <span style="color:var(--bad)">red</span> = retired address · <span style="color:var(--ok)">green</span> = new address</p>
+    </div>
+    <div class="meta"><b>Sheet 3 of 3</b><br>Migration map</div>
+  </div>
+  <div class="moves">
+    <div class="move-group">
+      <h3>Merged — one home per topic, no more duplication</h3>
+      <div class="move"><code>/book-a-support-worker</code><span class="arr">→</span><code class="to">/get-started</code><small>3 overlapping forms become one 3-step flow</small></div>
+      <div class="move"><code>/referral</code><span class="arr">→</span><code class="to">/get-started?who=coordinator</code><small>30-field wall retired; sensitive data moves to meet &amp; greet</small></div>
+      <div class="move"><code>/register-for-ndis</code><span class="arr">→</span><code class="to">/resources/new-to-the-ndis</code><small>two thin pages merged into one real guide</small></div>
+      <div class="move"><code>/learn-more-about-ndis</code><span class="arr">→</span><code class="to">/resources/new-to-the-ndis</code><small></small></div>
+      <div class="move"><code>/fitness-programs</code><span class="arr">→</span><code class="to">/services/health-fitness-wellbeing</code><small>wellness content absorbed into full service page</small></div>
+    </div>
+    <div class="move-group">
+      <h3>Fixed — labels finally match content</h3>
+      <div class="move"><code>/nutrition-advice</code><span class="arr">→</span><code class="to">/services/health-fitness-wellbeing</code><small>“One on One Supports” at a nutrition URL, resolved</small></div>
+      <div class="move"><code>/support-workers</code><span class="arr">→</span><code class="to">/team/</code><small>name grid becomes filterable directory with profiles</small></div>
+      <div class="move"><code>/support-workers/{name}</code><span class="arr">→</span><code class="to">/team/{name}</code><small>per-profile redirects once bios migrate</small></div>
+      <div class="move"><code>/activities</code><span class="arr">→</span><code class="to">/activities</code><small>same address — but now readable by search engines &amp; screen readers</small></div>
+    </div>
+    <div class="move-group">
+      <h3>Promoted — out of the dropdown, into the light</h3>
+      <div class="move"><code>/feedback</code><span class="arr">→</span><code class="to">/resources/feedback-complaints</code><small>compliance page, now linked site-wide in the footer strip</small></div>
+      <div class="move"><code>/faqs</code><span class="arr">→</span><code class="to">/resources/faqs</code><small>all 8 genuine answers kept and expanded</small></div>
+      <div class="move"><code>/news</code><span class="arr">→</span><code class="to">/resources/news</code><small>plus an article template for consistent posts</small></div>
+      <div class="move"><code>—</code><span class="arr">→</span><code class="to">/coordinators</code><small><b>new:</b> the referral channel the old site ignored</small></div>
+      <div class="move"><code>—</code><span class="arr">→</span><code class="to">/accessibility</code><small><b>new:</b> WCAG 2.2 AA statement</small></div>
+    </div>
+    <div class="move-group">
+      <h3>Carried over unchanged</h3>
+      <div class="move"><code class="to" style="text-decoration:none">/storage/…handbook.pdf</code><small style="max-width:60%">Participant Handbook — same path, no redirect needed</small></div>
+      <div class="move"><code class="to" style="text-decoration:none">/storage/…JD.pdf</code><small style="max-width:60%">Support Worker job description</small></div>
+      <div class="move"><code class="to" style="text-decoration:none">members.fitcare… ↗</code><small style="max-width:60%">Members portal subdomain untouched, footer-linked</small></div>
+      <div class="move"><code>/login</code><span class="arr">→</span><code class="to">members portal (confirm)</code><small>the one open question — see redirect map</small></div>
+      <div class="move"><code>/services · /about · /careers · /contact · /locations/*</code><span class="arr">→</span><code class="to">same addresses</code><small>rebuilt in place</small></div>
+    </div>
+  </div>
+  <div class="foot"><span>FITCare Support Services — website rebuild</span><span>Implement as 301s at go-live; verification steps in docs/redirect-map.md · prepared 4 July 2026</span></div>
+</section>
+
+</body>
+</html>
